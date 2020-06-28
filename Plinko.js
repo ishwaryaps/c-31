@@ -3,8 +3,10 @@ class Plinko{
         
     var options={
         isStatic:true,    
-        friction:0,        
+        friction:0, 
+        isStatic:true       
     }
+    
    
     this.x=x;
     this.y=y;
@@ -15,10 +17,14 @@ class Plinko{
  
   display(){
       var pos=this.body.position;
+      var angle=this.body.angle;
       push();
       translate(pos.x,pos.y);
+rotate(angle);
       rectMode(CENTER);
+      noStroke();
       fill("white");
+      ellipseMode(RADIUS);
       ellipse(0,0,this.r,this.r);
       //imageMode(CENTER);
        //image(this.image, 0,0,this.r, this.r)
